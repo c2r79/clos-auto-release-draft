@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Checkout the source code
         uses: actions/checkout@v1
-      - name: Install dependencies
-        uses: npm ci
+      - name: NPM or Yarn install with caching
+        uses: bahmutov/npm-install@v1.1.0
       - name: Build
         uses: npm run all
