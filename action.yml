@@ -1,10 +1,9 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
-inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
-runs:
+name: 'Clos Auto Release Draft'
+description: 'Drafts a Github release w/ the changes introduced by a newly created version tag'
+author: 'Carlos'
+outputs:
+  release-url:
+    description: "The url of the Github release that was drafted"
+runs:     
   using: 'node12'
   main: 'dist/index.js'
