@@ -2,14 +2,14 @@ name: Build
 on:
   push:
     branches:
-    - master
+      - master
 jobs:
   build:
     name: Build and test
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
+        os: [ubuntu-latest]
       fail-fast: true
     steps:
       - name: Checkout the source code
