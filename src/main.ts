@@ -14,8 +14,7 @@ async function run(): Promise<void> {
     if (tag && version.isSemVer(tag)) {
       const changeLog = await git.getChangesIntroducedByTag(tag)
       core.debug(`Detected changelog:\n${changeLog}`)
-      // releaseUrl = await github.createReleaseDraft(tag, token, changeLog)
-      releaseUrl = await github.createReleaseDraft('wrong', token, changeLog)
+      releaseUrl = await github.createReleaseDraft(tag, token, changeLog)
     }
     // * We return the release-url parameter
     core.setOutput('release-url', releaseUrl)
