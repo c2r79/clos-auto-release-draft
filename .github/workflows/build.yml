@@ -17,4 +17,4 @@ jobs:
       - name: NPM or Yarn install with caching
         uses: bahmutov/npm-install@v1.1.0
       - name: Build
-        uses: npm run all
+        run: npm run all
