@@ -17,3 +17,11 @@ jobs:
           import platform
           (platform.processor())
         shell: python
+  run-windows-commands:
+    runs-on: windows-latest
+    steps:
+      - name: Uses powershell to print the current directory
+        run: Get-Location
+      - name: Uses bash to print the current directory
+        run: pwd
+        shell: bash
