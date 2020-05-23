@@ -1,7 +1,11 @@
 name: Simple shell commands
 
-on: [push, create]
-
+#on: [push, create]
+on:
+  push:
+    branches:
+      - master
+  create:
 jobs:
   run-shell-commands:
     runs-on: ubuntu-latest
