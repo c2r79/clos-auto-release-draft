@@ -1,0 +1,12 @@
+name: External triggers w/ repository_dispatch
+
+on:
+  repository_dispatch:
+    types: [myTestEvent]
+
+jobs:
+  test-external-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing repository dispatch functionality
+        run: echo "This was triggered by an external event"
