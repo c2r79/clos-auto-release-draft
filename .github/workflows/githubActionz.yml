@@ -1,0 +1,14 @@
+name: Run Github Actions
+
+on: push
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout a branch
+        uses: actions/checkout@v2
+      - name: List files after Checkout
+        run: |
+          pwd
+          ls -a
