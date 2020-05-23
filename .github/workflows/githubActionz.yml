@@ -1,6 +1,6 @@
 name: Run Github Actions
 
-on: push
+on: pull_request
 
 jobs:
   run-github-actions:
@@ -12,6 +12,7 @@ jobs:
         run: |
           pwd
           ls -a
+
   show-github-object-and-envVars:
     runs-on: ubuntu-latest
     steps:
