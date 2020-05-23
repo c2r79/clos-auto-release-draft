@@ -10,3 +10,5 @@ jobs:
     steps:
       - name: Testing repository dispatch functionality
         run: echo "This was triggered by an external event"
+      - name: Repository dispatch event payload
+        run: echo ${{github.event}}
