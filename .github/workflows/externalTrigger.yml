@@ -5,7 +5,7 @@ on:
     types: [myTestEvent]
 
 jobs:
-  run-github-actions:
+  test-external-event:
     runs-on: ubuntu-latest
     steps:
       - name: Testing repository dispatch functionality
