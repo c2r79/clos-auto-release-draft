@@ -12,3 +12,14 @@ jobs:
         run: |
           pwd
           ls -a
+  show-github-object-and-envVars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Github SHA envVar of the commit that triggered this workflow run
+        run: echo $GITHUB_SHA
+      - name: Show Github userName & repoName envVar of the commit that triggered this workflow run
+        run: echo $GITHUB_REPOSITORY
+      - name: Show Github Workspace directory of the commit that triggered this workflow run
+        run: echo $GITHUB_WORKSPACE
+      - name: Show Github TOKEN on the github object which is hidden in build log
+        run: ${{github.token}}
