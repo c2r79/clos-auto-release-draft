@@ -11,4 +11,4 @@ jobs:
       - name: Testing repository dispatch functionality
         run: echo "This was triggered by an external event"
       - name: Repository dispatch event payload
-        run: echo ${{github.event.myTestEnv}}
+        run: echo ${{github.event.client_payload.myTestEnv}}
