@@ -9,12 +9,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
       fail-fast: true
     steps:
       - name: Checkout the source code
         uses: actions/checkout@v1
       - name: NPM or Yarn install with caching
-        uses: bahmutov/npm-install@v1.1.0
+        run: npm ci
       - name: Build
         run: npm run all
