@@ -21,5 +21,3 @@ jobs:
         run: echo $GITHUB_REPOSITORY
       - name: Show Github Workspace directory of the commit that triggered this workflow run
         run: echo $GITHUB_WORKSPACE
-      - name: Show Github TOKEN on the github object which is hidden in build log
-        run: ${{github.token}}
