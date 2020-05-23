@@ -1,0 +1,23 @@
+name: Run Github Actions
+
+on: push
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout a branch
+        uses: actions/checkout@v2
+      - name: List files after Checkout
+        run: |
+          pwd
+          ls -a
+  show-github-object-and-envVars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Github SHA envVar of the commit that triggered this workflow run
+        run: echo $GITHUB_SHA
+      - name: Show Github userName & repoName envVar of the commit that triggered this workflow run
+        run: echo $GITHUB_REPOSITORY
+      - name: Show Github Workspace directory of the commit that triggered this workflow run
+        run: echo $GITHUB_WORKSPACE
