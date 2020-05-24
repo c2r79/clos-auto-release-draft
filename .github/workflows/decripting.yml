@@ -1,0 +1,16 @@
+name: Encrypting & decryoting of files
+
+on: pull_request
+
+jobs:
+  decrypt-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkoutv2
+      - name: Decrypt the encrypted file
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output $HOME/fixtures/secret.json fixtures/clos-auto-release-draft-local-secrets.json.gpg
+        env:
+          PASSPHRASE: ${{secrets.GNU_DECRYPT}}
+      - name: Print file content to test successful decryption
+        run: cat $HOME/fixtures/secret.json
