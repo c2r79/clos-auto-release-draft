@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v2
+      - name: View directory
+        run: ls -a
       - name: Decrypt the encrypted file
         run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output $HOME/fixtures/secret.json $HOME/fixtures/clos-auto-release-draft-local-secrets.json.gpg
         env:
