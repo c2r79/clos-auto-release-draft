@@ -1,0 +1,52 @@
+name: Environment variables
+
+on: push
+
+env:
+  WF_ENV: This env var is available to all jobs
+
+jobs:
+  log-workflow-env-var:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log environment variables
+        run: |
+          echo "WF_ENV variable: ${WF_ENV}"
+
+  log-job-scoped-env-var:
+    runs-on: ubuntu-latest
+    env:
+      JOB_ENV: This env var is available to all steps in this job only
+    steps:
+      - name: Log job scoped environment variable
+        run: |
+          echo "JOB_ENV variable: ${JOB_ENV}"
+      - name: Log step scoped environment variable
+        env:
+          STEP_ENV: This env var is available to this stop only
+        run: |
+          echo "STEP_ENV variable: ${STEP_ENV}"
+      - name: Testing scoping of variables
+        run: |
+          echo "WF_ENV should be available: ${WF_ENV}"
+          echo "JOB_ENV should be available: ${JOB_ENV}"
+          echo "STEP_ENV should NOT be available: ${STEP_ENV}"
+
+  log-default-env-vars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log some default env variables
+        run: |
+          echo "HOME: ${HOME}"
+          echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"
+          echo "GITHUB_ACTION: ${GITHUB_ACTION}"
+          echo "GITHUB_ACTIONS: ${GITHUB_ACTIONS}"
+          echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
+          echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
+          echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
+          echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
+          echo "GITHUB_SHA: ${GITHUB_SHA}"
+          echo "GITHUB_REF: ${GITHUB_REF}"
+          echo "WF_ENV should be available: ${WF_ENV}"
+          echo "JOB_ENV should NOT be available: ${JOB_ENV}"
+          echo "STEP_ENV should NOT be available: ${STEP_ENV}"

@@ -6,7 +6,7 @@ on:
   #create:
 jobs:
   test:
-    name: Test
+    name: Release draft action
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
