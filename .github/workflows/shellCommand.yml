@@ -1,11 +1,15 @@
 name: Simple shell commands
 
 #on: [push, create]
+#on:
+#  push:
+#    branches:
+#      - master
+#create:
 on:
   push:
     branches:
-      - master
-  create:
+      - ${GITHUB_REF}
 jobs:
   run-shell-commands:
     runs-on: ubuntu-latest
