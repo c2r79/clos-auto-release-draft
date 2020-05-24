@@ -1,6 +1,10 @@
 name: Environment variables
 
-on: push
+#on: push
+on:
+  push:
+    branches:
+      - ${GITHUB_REF}
 
 env:
   WF_ENV: This env var is available to all jobs

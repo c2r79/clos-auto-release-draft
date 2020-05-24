@@ -1,9 +1,13 @@
 name: Create an issue on Github
 
+#on:
+#  pull_request:
+#    branches:
+#      - ${{github.ref}}
 on:
-  pull_request:
+  push:
     branches:
-      - ${{github.ref}}
+      - ${GITHUB_REF}
 
 jobs:
   create_issue:
