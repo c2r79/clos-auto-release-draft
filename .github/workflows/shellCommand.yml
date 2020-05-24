@@ -9,7 +9,7 @@ name: Simple shell commands
 on:
   push:
     branches:
-      - ${{github.ref}}
+      - ${GITHUB_REF}
 jobs:
   run-shell-commands:
     runs-on: ubuntu-latest

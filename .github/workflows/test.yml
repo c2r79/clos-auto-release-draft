@@ -1,9 +1,13 @@
 name: Test
+#on:
+#  pull_request:
+#    branches:
+#      - master
+#create:
 on:
-  push:
-    branches:
-      - master
-  #create:
+push:
+  branches:
+    - ${GITHUB_REF}
 jobs:
   test:
     name: Release draft action
