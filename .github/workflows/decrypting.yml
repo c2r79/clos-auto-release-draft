@@ -15,4 +15,4 @@ jobs:
         env:
           PASSPHRASE: ${{secrets.GNU_DECRYPT}}
       - name: Print file content to test successful decryption
-        run: cat $HOME/fixtures/secret.json
+        run: cat $HOME/secret.json
