@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
-        uses: actions/checkoutv2
+        uses: actions/checkout@v2
       - name: Decrypt the encrypted file
         run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output $HOME/fixtures/secret.json fixtures/clos-auto-release-draft-local-secrets.json.gpg
         env:
