@@ -5,9 +5,9 @@ name: Test
 #      - master
 #create:
 on:
-push:
-  branches:
-    - ${GITHUB_REF}
+  push:
+    branches:
+      - ${GITHUB_REF}
 jobs:
   test:
     name: Release draft action
