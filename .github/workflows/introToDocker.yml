@@ -1,0 +1,18 @@
+name: Docker containers in workflow
+
+on: pull_request
+
+jobs:
+  run-node-docker-image:
+    runs-on: ubuntu-latest
+    container:
+      image: node:14.3.0-alpine3.10
+      #   env:
+      #   ports:
+      #   volumes:
+      #   options: --cpus 1 --host
+    steps:
+      - name: Log node version
+        run: node -v
+      - name: View os log info to make sure its running on the docker image
+        run: cat /etc/os-release
