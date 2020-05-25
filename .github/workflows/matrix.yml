@@ -1,6 +1,10 @@
 name: Setting up node environment matrix
 
-on: pull_request
+#on: pull_request
+on:
+  push:
+    branches:
+      - ${GITHUB_REF}
 
 jobs:
   node-version-matrix:
