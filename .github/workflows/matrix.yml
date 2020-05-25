@@ -23,6 +23,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Log out current node version
-        run: |
-          node -v
-          echo $IS_WINDOWS_NODE_10
+        run: node -v
+      - name: Check if extra variable appears
+        run: echo $IS_WINDOWS_NODE_10
