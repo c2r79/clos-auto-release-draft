@@ -1,0 +1,16 @@
+name: Setting up node environment matrix
+
+on: create
+
+jobs:
+  node-version-matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log out current node version
+        run: node -v
+      - name: Change node version
+        uses: actions/set-up@v2
+        with:
+          node-version: 6
+      - name: Log out current node version
+        run: node -v
