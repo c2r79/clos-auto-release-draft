@@ -1,11 +1,11 @@
 name: Run Docker containers in step
 
-#on: pull_request
+on: pull_request
 
-on:
-  push:
-    branches:
-      - ${GITHUB_REF}
+#on:
+#  push:
+#   branches:
+#      - ${GITHUB_REF}
 
 jobs:
   docker-run-in-steps:
