@@ -14,7 +14,7 @@ jobs:
             is-it-node-10-dawg: "Yeah man, it sure is"
     runs-on: ${{ matrix.os }}
     env:
-      IS_WINDOWS_NODE_10: ${{ is-it-node-10-dawg }}
+      IS_WINDOWS_NODE_10: ${{ matrix.is-it-node-10-dawg }}
     steps:
       - name: Log out current node version
         run: node -v
