@@ -1,6 +1,10 @@
 name: Encrypting & decryoting of files
 
-on: pull_request
+#on: pull_request
+on:
+  push:
+    branches:
+      - ${GITHUB_REF}
 
 jobs:
   decrypt-file:
