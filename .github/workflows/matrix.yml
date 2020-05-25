@@ -1,6 +1,6 @@
 name: Setting up node environment matrix
 
-on: create
+on: pull_request
 
 jobs:
   node-version-matrix:
