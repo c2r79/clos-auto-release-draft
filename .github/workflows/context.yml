@@ -3,7 +3,7 @@ name: Context objects
 on: pull_request
 
 jobs:
-  one:
+  print-github-contexts:
     runs-on: ubuntu-16.04
     steps:
       - name: Dump GitHub context
@@ -30,3 +30,13 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
+
+  print-github-functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Data Dump
+        run: |
+          echo ${{contains('hello', 'll')}}
+          echo ${{startsWith('hello', 'he')}}
+          echo ${{endsWith('hello', 'lo')}}
+          echo ${{format('Hello {0} {1} {2}', 'World', '!', '!')}}
