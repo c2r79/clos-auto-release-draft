@@ -1,6 +1,10 @@
 name: Docker containers in workflow
 
-on: pull_request
+#on: pull_request
+on:
+  push:
+    branches:
+      - ${GITHUB_REF}
 
 jobs:
   run-node-docker-image:

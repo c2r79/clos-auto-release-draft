@@ -1,0 +1,22 @@
+name: Run Docker containers in step
+
+on: pull_request
+
+jobs:
+  docker-run-in-steps:
+    runs-on: ubuntu-latest
+    container:
+      image: node:13.7.0-alpine3.11
+    steps:
+      - name: Check node version
+        run: node -v
+      - name: Step with Docker
+        uses: docker://node:8.16.2-alpine3.9
+        with:
+          entrypoint: /bin/echo
+          args: Hello World
+      - name: Get Docker ndoe version
+        uses: docker://node:8.16.2-alpine3.9
+        with:
+          entrypoint: /usr/local/bin/node
+          args: -v
