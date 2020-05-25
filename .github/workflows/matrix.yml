@@ -9,7 +9,7 @@ jobs:
       - name: Log out current node version
         run: node -v
       - name: Change node version
-        uses: actions/set-up@v2
+        uses: actions/setup-node@v1
         with:
           node-version: 6
       - name: Log out current node version
