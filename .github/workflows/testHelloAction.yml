@@ -13,4 +13,4 @@ jobs:
           who-to-greet: "Automated test"
       - name: Print time
         run: | 
-          echo "Time: ${{steps.hello.outputs.time}}"
+          echo "Time: ${{steps.helloAction.outputs.time}}"
