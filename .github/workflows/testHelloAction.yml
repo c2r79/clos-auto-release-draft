@@ -1,0 +1,15 @@
+on: push
+
+jobs:
+  testing-hello-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v2
+      - name: Run hello action
+        uses: ./.github/actions/hello
+        id: helloAction
+        with:
+          who-to-greet: "Automated test"
+        run: | 
+          echo "Time: ${{steps.hello.outputs.time}}"
