@@ -14,7 +14,7 @@ try {
 
   console.log('HEYYYYYYY YEAHHHHHHHHHHHH...HEYYYY YEAHHHHHH')
   console.log(`${name}`)
-  console.log(JSON.stringify(github.event, null, '\t'))
+  console.log(JSON.stringify(github, null, '\t'))
 } catch (error) {
   setFailed(error)
 }
