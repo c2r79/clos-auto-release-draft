@@ -6,8 +6,13 @@ jobs:
     steps:
       - name: Checkout latest code
         uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm ci
+      - name: Check out files
+        run: |
+          ls -li
       - name: Run hello action
-        uses: ./.github/actions/hello
+        uses: ./.github/actions/hello/
         id: helloAction
         with:
           who-to-greet: "Automated test"
