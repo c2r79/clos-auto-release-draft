@@ -1,4 +1,7 @@
 on: push
+ # push:
+  #  branches:
+   #   - ${GITHUB_REF}
 
 jobs:
   testing-hello-action:
@@ -8,6 +11,16 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: npm ci
+      - name: Create github issue
+        uses: ./.github/actions/githubIssue/
+        id: issueAction
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Test title
+          body: Test body
+      - name: Test issue
+        run: |
+          echo ${{steps.issue.output.issue}}
       - name: Run hello action
         uses: ./.github/actions/hello/
         id: helloAction

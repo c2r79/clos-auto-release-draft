@@ -18,5 +18,3 @@ try {
 } catch (error) {
   setFailed(error)
 }
-// 8.1 3.1
-// 311.6 62.6
