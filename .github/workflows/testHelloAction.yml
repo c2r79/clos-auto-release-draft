@@ -18,9 +18,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: Test title
           body: Test body
-          assignees: |
-            Bob Jones
-            Clos O'Malley
       - name: Test issue
         run: |
           echo ${{steps.issue.output.issue}}
