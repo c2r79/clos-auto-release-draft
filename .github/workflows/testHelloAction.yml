@@ -1,7 +1,7 @@
 on: push
- # push:
-  #  branches:
-   #   - ${GITHUB_REF}
+#  push:
+ #   branches:
+  #    - ${GITHUB_REF}
 
 jobs:
   testing-hello-action:
@@ -16,8 +16,8 @@ jobs:
         id: issueAction
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          title: Test title
-          body: Test body
+          title: Test title 2
+          body: Test body 2
       - name: Test issue
         run: |
           echo ${{steps.issue.output.issue}}
@@ -26,6 +26,11 @@ jobs:
         id: helloAction
         with:
           who-to-greet: "Automated test"
+      - name: Testing hello dockerized action
+        uses: ./.github/actions/hello-docker/
+        id: helloDoc
+        with:
+          who-to-greet: "Whats up Doc"
       - name: Print time
         run: | 
           echo "Time: ${{steps.helloAction.outputs.time}}"
